@@ -1,19 +1,15 @@
 ---
-id: 11
-title: About
-date: '2018-01-18T06:37:53+00:00'
+id: 250
+date: '2022-04-27T10:48:33+00:00'
 author: 'Prajyot Khandeparkar'
-layout: page
-guid: 'http://165.227.238.222/wordpress/?page_id=11'
-write_hide_page_title:
-    - ''
-blogcraft_post_sidebar_option:
-    - global-sidebar
-twp_disable_ajax_load_next_post:
-    - global-layout
+layout: revision
+guid: 'https://www.prajyotkhandeparkar.com/?p=250'
+permalink: '/?p=250'
 ---
 
-<div class="wp-container-2 wp-block-columns"><div class="wp-container-1 wp-block-column" style="flex-basis:100%"><div class="wp-block-image"><figure class="aligncenter">![prajyotkhandeparkar](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/04/20210224_1245511-225x300.jpg)</figure></div></div></div>**Prajyot Khandeparkar** is a **Software Development Engineer** &amp; **Cloud Solution Architect** enthusiast. He pursued his Master’s degree in **Computer Science** from **Goa University**.
+![prajyotkhandeparkar](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/04/20210224_1245511-225x300.jpg)
+
+**Prajyot Khandeparkar** is a **Software Development Engineer** &amp; **Cloud Solution Architect** enthusiast. He pursued his Master’s degree in **Computer Science** from **Goa University**.
 
 He likes to solve bigger problems by breaking them into smaller chunks, with that he tries to help organisations grow and meet their goals in time.
 
