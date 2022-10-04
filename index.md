@@ -13,7 +13,7 @@ twp_disable_ajax_load_next_post:
     - global-layout
 ---
 
-<div class="wp-container-2 wp-block-columns"><div class="wp-container-1 wp-block-column" style="flex-basis:100%"><div class="wp-block-image"><figure class="aligncenter">![prajyotkhandeparkar](https://prajyotpro.github.io/wp-content/uploads/2022/04/20210224_1245511-225x300.jpg)</figure></div></div></div>**Prajyot Khandeparkar** is a **Software Development Engineer** &amp; **Cloud Solution Architect** enthusiast. He pursued his Master’s degree in **Computer Science** from **Goa University**.
+<div class="wp-container-2 wp-block-columns"><div class="wp-container-1 wp-block-column" style="flex-basis:100%"><div class="wp-block-image"><figure class="aligncenter"><img src="https://prajyotpro.github.io/wp-content/uploads/2022/04/20210224_1245511-225x300.jpg"></figure></div></div></div>**Prajyot Khandeparkar** is a **Software Development Engineer** &amp; **Cloud Solution Architect** enthusiast. He pursued his Master’s degree in **Computer Science** from **Goa University**.
 
 He likes to solve bigger problems by breaking them into smaller chunks, with that he tries to help organisations grow and meet their goals in time.
 
