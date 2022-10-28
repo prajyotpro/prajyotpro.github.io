@@ -78,7 +78,15 @@ For example:
 
 Similar to the above there are scenarios you will need to save a boolean data type. Consider fetching information of a user which is valid OR admin
 
-`let v<br></br>let val<br></br>let valid<br></br>let a<br></br>let admin`
+`let v`
+
+`let val`
+
+`let valid`
+
+`let a`
+
+`let admin`
 
 Why above examples are bad variable names? Let’s find out
 
@@ -87,7 +95,9 @@ The variable name `v, val, valid, a, admin` can be anything. admin can also stor
 We can always make use of `is` prefix to make sure it is a boolean type, this makes it more descriptive.
 
 For example:  
-`let isValidUser<br></br>let isAdmin`
+`let isValidUser`
+
+`let isAdmin`
 
 ### Constant
 
