@@ -32,7 +32,9 @@ Instead of following the login steps every time, which was a tedious process. I 
   
 The script allows me to set various search options and also send a notification on different channels. I have been using Email (**Mailgun**) and **Slack**. For you can configure and add more channels as you desire.
 
-<div class="wp-block-image"><figure class="aligncenter size-large is-resized">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2021/05/pexels-cottonbro-3952238.jpg)</figure></div>### Dive in
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2021/05/pexels-cottonbro-3952238.jpg)
+
+### Dive in
 
 The code is written in JavaScript and you can run it on node.js
 
@@ -48,7 +50,6 @@ Repository Link: [https://github.com/prajyotpro/cowin\_vaccine\_notifier](https:
 – add configuration to .env
 
 ```
-<pre class="wp-block-code">```
 ENABLE_MAILGUN=false
 MAILGUN_API_KEY=mailgun api key
 MAILGUN_DOMAIN=mailgun domain
@@ -57,41 +58,36 @@ MAILGUN_RECEIPIENTS=["email1@example.com", "email2@example.com"]
 ENABLE_SLACK=true
 SLACK_HOOK_URL=slack web hook
 ```
-```
 
 – script parameters
 
 ```
-<pre class="wp-block-code">```
 --date DD-MM-YYYY // mandatory, default current date
 --district 151 // district id - required if no pincode, default - 151
 --pincode 403001 // pincode - required if no district
 --age 18 // age limit (18,45), default - 18
 --dose 1 // dose (1,2), default - 1
 ```
-```
 
 ### Running the script
 
 ```
-<pre class="wp-block-code">```
 node index.js --date 20-05-2021 --district 151 --age 18 --dose 1
-```
 ```
 
 Data Output:
 
-<figure class="wp-block-image size-large">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2021/05/Screenshot-2021-05-20-at-11.30.10-PM-1024x123.png)</figure>Slack Notification:   
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2021/05/Screenshot-2021-05-20-at-11.30.10-PM-1024x123.png)
+Slack Notification:   
 I’ve set up a notification hook on a covid channel.
 
-<figure class="wp-block-image size-large">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2021/05/Screenshot-2021-05-20-at-11.30.42-PM-1024x531.png)</figure>## Now what? How do I book an appointment?
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2021/05/Screenshot-2021-05-20-at-11.30.42-PM-1024x531.png)
+## Now what? How do I book an appointment?
 
 Running the script every moment does not make sense? So I have setup a cronjob along with a shell command:
 
 ```
-<pre class="wp-block-code">```
 */1 * * * * /bin/sh /Users/prajyot/Projects/prajyot/cowin_vaccine_notifier/script.sh
-```
 ```
 
 Once I received slack notification I try to book on the [CoWIN web portal](https://selfregistration.cowin.gov.in/),   

@@ -21,7 +21,8 @@ tags:
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">6</span> <span class="rt-label rt-postfix">min read</span></span><span style="font-weight: 400;">Hey fellas, hope you are all doing good. Things are moving pretty much online these days, we all know social distancing is important, and online is the way to get things done quickly. WordPress has been playing a major role in blogging, providing an amazing platform for content creators and editors. In today’s read, we are going to Dockerize WordPress for development. </span>
 
-<div class="wp-block-image"><figure class="aligncenter">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2020/05/wordpress-973439_640.jpg)</figure></div><span style="font-weight: 400;"> </span>
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2020/05/wordpress-973439_640.jpg)
+
 
 ## <span style="font-weight: 400;">Level: </span>
 
@@ -59,20 +60,20 @@ tags:
 
 ### <span style="font-weight: 400;">Folder Structure</span>
 
-<div class="wp-block-image"><figure class="aligncenter size-large">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2020/05/Screenshot-2020-05-30-at-8.42.29-AM-1024x816.png)</figure></div>```
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2020/05/Screenshot-2020-05-30-at-8.42.29-AM-1024x816.png)
+```
 <pre class="wp-block-verse"><span style="font-weight: 400;">./<br></br></span><span style="font-weight: 400;">--- app - The WordPress project<br></br></span><span style="font-weight: 400;">------ wp-config - WordPress configuration file - modified to make use of .env file<br></br></span><span style="font-weight: 400;">--- deploy - deployment folder<br></br></span><span style="font-weight: 400;">------ development.yaml<br></br></span><span style="font-weight: 400;">--- .evn - your application environment variables </span><i><span style="font-weight: 400;">(.gitignore-d)<br></br></span></i><span style="font-weight: 400;">--- .env-example - example structure<br></br></span><span style="font-weight: 400;">--- Dockerfile<br></br></span><span style="font-weight: 400;">--- docker-compose.yaml</span>
 ```
 
 ## <span style="font-weight: 400;">Let’s get started! </span>
 
-<div class="wp-block-image"><figure class="aligncenter size-large">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2020/05/docker-vector-logo-small.png)</figure></div>### <span style="font-weight: 400;">Dockerfile</span>
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2020/05/docker-vector-logo-small.png)
+### <span style="font-weight: 400;">Dockerfile</span>
 
 <span style="font-weight: 400;">Starting from preexisting PHP, apache image </span>
 
 ```
-<pre class="wp-block-code">```
 FROM php:7.2.9-apache
-```
 ```
 
 <span style="font-weight: 400;">Create a directory on image for your project and copy the content from your .app directory</span>
@@ -80,28 +81,23 @@ FROM php:7.2.9-apache
 <span style="font-weight: 400;">Creating new working directory and assign permission for web app</span>
 
 ```
-<pre class="wp-block-code">```
 # Creating new working directory and assign permission for web app
 RUN mkdir -p /var/www/html/
 COPY ./app/ /var/www/html/
 RUN chmod 755 /var/www/html/
 RUN chown -R www-data:www-data /var/www
 ```
-```
 
 <span style="font-weight: 400;">In this project – we will be connecting to database. Install required extension for php.</span>
 
 ```
-<pre class="wp-block-code">```
 # Install extensions
 RUN docker-php-ext-install mysqli
-```
 ```
 
 <span style="font-weight: 400;">Lets see how our complete Dockerfile looks like</span>
 
 ```
-<pre class="wp-block-code">```
 FROM php:7.2.9-apache 
 
 # Creating new working directory and assign permission for web app
@@ -113,20 +109,16 @@ RUN chown -R www-data:www-data /var/www
 # Install extensions
 RUN docker-php-ext-install mysqli
 ```
-```
 
 <span style="font-weight: 400;">Time to build the image</span>
 
 ```
-<pre class="wp-block-code">```
 docker build .
-```
 ```
 
 <span style="font-weight: 400;">Output: I have removed some configuration setting and unpackaging logs</span>
 
 ```
-<pre class="wp-block-code">```
 Sending build context to Docker daemon  289.8MB
 Step 1/6 : FROM php:7.2.9-apache
 7.2.9-apache: Pulling from library/php
@@ -167,19 +159,16 @@ Step 6/6 : RUN docker-php-ext-install mysqli
 <whole setup>
 Successfully built fe9ca1ade37a		
 ```
-```
 
 <span style="font-weight: 400;">View the docker image: </span>
 
 ```
-<pre class="wp-block-code">```
 docker images
 
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 <none>              <none>              411caa71e9d8        28 minutes ago      521MB
 php                 7.2.9-apache        a52ec7bd06d5        20 months ago       378MB
 
-```
 ```
 
 ### <span style="font-weight: 400;">Docker compose</span>
@@ -200,18 +189,15 @@ php                 7.2.9-apache        a52ec7bd06d5        20 months ago       
 <span style="font-weight: 400;">As we had already built our docker image **a52ec7bd06d5**, we can specify the local image OR your image from DockerHub **YOUR\_DOCKERHUB\_USER/YOUR\_IMAGE\_NAME.**</span>
 
 ```
-<pre class="wp-block-code">```
 version: "3"
 services:
    app:
        image: a52ec7bd06d5
 ```
-```
 
 <span style="font-weight: 400;">Althernatively, you can make use of the Dockerfile to build an image.</span>
 
 ```
-<pre class="wp-block-code">```
 version: "3"
 services:
    app:
@@ -219,21 +205,17 @@ services:
            context: .
            dockerfile: ./Dockerfile
 ```
-```
 
 <span style="font-weight: 400;">Setting up environment variables</span>
 
 ```
-<pre class="wp-block-code">```
        env_file:
            - ./.env
-```
 ```
 
 <span style="font-weight: 400;">.env file</span>
 
 ```
-<pre class="wp-block-code">```
 WP_DEBUG=true
  
 DB_NAME=wordpress_local
@@ -242,14 +224,12 @@ DB_PASSWORD=test
 DB_HOST=db
 DB_TABLE_PREFIX=wp_
 ```
-```
 
 <span style="font-weight: 400;">It is as per your preference how you set up the environment variables. For my development projects, I personally like to make use of **.env** file – it keeps the code much cleaner and organised.</span>
 
 <span style="font-weight: 400;">Alternatively, you can make use of </span><span style="font-weight: 400;">ENVIRONMENT</span><span style="font-weight: 400;"> property</span>
 
 ```
-<pre class="wp-block-code">```
        environment:
 	   WP_DEBUG: true
            DB_NAME: wordpress_local
@@ -258,25 +238,22 @@ DB_TABLE_PREFIX=wp_
            DB_HOST: db
            DB_TABLE_PREFIX: wp_
 ```
-```
 
 <span style="font-weight: 400;">Let’s move further and specify exposed ports, volumes and network.</span>
 
 ```
-<pre class="wp-block-code">```
        ports:
            - "80:80"
        volumes:
            - ./app/:/var/www/html/
        networks:
            - default
-```
+
 ```
 
 <span style="font-weight: 400;">That’s it!, lets view our complete **docker-compose.yaml**</span>
 
 ```
-<pre class="wp-block-code">```
 version: "3"
 services:
    app:
@@ -291,13 +268,12 @@ services:
            - ./app/:/var/www/html/
        networks:
            - default
-```
+
 ```
 
 <span style="font-weight: 400;">Now, we can run **docker-compose up** to create and run our container</span>
 
 ```
-<pre class="wp-block-code">```
 docker-compose up
  
 Recreating wordpress_app_1 ... done
@@ -306,7 +282,6 @@ app_1  | AH00558: apache2: Could not reliably determine the server's fully quali
 app_1  | AH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.21.0.2. Set the 'ServerName' directive globally to suppress this message
 app_1  | [Sat May 30 02:28:17.831826 2020] [mpm_prefork:notice] [pid 1] AH00163: Apache/2.4.25 (Debian) PHP/7.2.9 configured -- resuming normal operations
 app_1  | [Sat May 30 02:28:17.831994 2020] [core:notice] [pid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
-```
 ```
 
 <span style="font-weight: 400;">Let’s route </span>[<span style="font-weight: 400;">http://localhost/readme.html</span>](http://localhost/readme.html)
@@ -320,7 +295,6 @@ app_1  | [Sat May 30 02:28:17.831994 2020] [core:notice] [pid 1] AH00094: Comman
 <span style="font-weight: 400;">For my development environment, I’ve created **development.yaml** – which will contain MariaDB image and environment variables.</span>
 
 ```
-<pre class="wp-block-code">```
 version: "3"
 services:
    app:
@@ -351,14 +325,12 @@ services:
        networks:
            - default
 ```
-```
 
 <span style="font-weight: 400;">We make use of **-f** parameter for using different container configuration files</span>
 
 <span style="font-weight: 400;">**docker-compose -f docker-compose.yaml -f deploy/development.yaml up**</span>
 
 ```
-<pre class="wp-block-code">```
 docker-compose -f docker-compose.yaml -f deploy/development.yaml up
  
 Starting wordpress_db_1 ... done
@@ -385,7 +357,6 @@ db_1   | 2020-05-30  2:38:32 0 [Note] InnoDB: If the mysqld execution user is au
 db_1   | 2020-05-30  2:38:32 0 [Note] InnoDB: 128 out of 128 rollback segments are active.
 db_1   | 2020-05-30  2:38:32 0 [Note] InnoDB: Creating shared tablespace for temporary tables
 ```
-```
 
 <span style="font-weight: 400;">Let’s route to </span>[<span style="font-weight: 400;">http://localhost</span>](http://localhost)<span style="font-weight: 400;"> to check if database is connected.</span>
 
@@ -411,9 +382,6 @@ db_1   | 2020-05-30  2:38:32 0 [Note] InnoDB: Creating shared tablespace for tem
     - <span style="font-weight: 400;">Heroku</span>
     - <span style="font-weight: 400;">AWS/DigitalOcean</span>
     - <span style="font-weight: 400;">GCP</span>
-
-```
-<pre class="wp-block-code">```
 
 ```
 ```
