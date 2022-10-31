@@ -1,9 +1,10 @@
 ---
 id: 11
 title: About
+permalink: /blog/
 date: '2018-01-18T06:37:53+00:00'
 author: 'Prajyot Khandeparkar'
-layout: page
+layout: default
 guid: 'http://165.227.238.222/wordpress/?page_id=11'
 write_hide_page_title:
     - ''
@@ -30,5 +31,4 @@ Also, helping to onboard smaller businesses to showcase the worldwide web, with 
 
 **Know more…**
 
-- Prajyot loves to travel. He is a **Padi** Certified – Open Water Diver.
-- He is also a fitness enthusiast and a Certified Fitness Coach.
+Prajyot loves to travel. He is a **Padi** Certified – Open Water Diver. He is also a fitness enthusiast and a Certified Fitness Coach.

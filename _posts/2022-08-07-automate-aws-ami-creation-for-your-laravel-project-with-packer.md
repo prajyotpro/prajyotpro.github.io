@@ -26,7 +26,9 @@ tags:
 
 In this post, we will find a way to automate your deployment process with Packer – as it says a tool which does packing.
 
-<div class="wp-block-image"><figure class="aligncenter size-full is-resized">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/pexels-angela-roma-7319294.jpg)</figure></div>If you have been exploring different tech stacks you will know that there are different ways of deploying your code to servers, but before that please take a look at my previous post on [Initial Backend Project Setup guide](https://www.prajyotkhandeparkar.com/initial-backend-project-setup-sync/) on syncing different environments to its advantage.
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/pexels-angela-roma-7319294.jpg)
+
+If you have been exploring different tech stacks you will know that there are different ways of deploying your code to servers, but before that please take a look at my previous post on [Initial Backend Project Setup guide](https://www.prajyotkhandeparkar.com/initial-backend-project-setup-sync/) on syncing different environments to its advantage.
 
 ## Prerequisite
 
@@ -70,18 +72,20 @@ We are writing a code with a .hcl file ie. Hashicorp configuration language whic
 
 *Note: For provisioning, I am using shell scripts to keep it simple and easy to understand. There are more advanced provisioning tools like ansible which could be used and something which you can explore at later stages.*
 
-<figure class="wp-block-image size-full">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/Screenshot-2022-08-07-at-11.50.50-PM.png)</figure>**aws-laravel.pcr.hcl** – we have the packer configuration file at the root of our project
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/Screenshot-2022-08-07-at-11.50.50-PM.png)
+**aws-laravel.pcr.hcl** – we have the packer configuration file at the root of our project
 
 **provisioners** – different provisioners, written in shell scripts
 
-<figure class="wp-block-image size-full">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/Screenshot-2022-08-08-at-12.24.36-AM.png)</figure>**config** – app configuration files
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/Screenshot-2022-08-08-at-12.24.36-AM.png)
+**config** – app configuration files
 
-<figure class="wp-block-image size-full">![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/Screenshot-2022-08-08-at-12.25.20-AM.png)</figure>## Few configurations I would like to discuss 
+![](https://www.prajyotkhandeparkar.com/wp-content/uploads/2022/08/Screenshot-2022-08-08-at-12.25.20-AM.png)
+## Few configurations I would like to discuss 
 
 ### ami\_name
 
 ```
-<pre class="wp-block-code">```
 source "amazon-ebs" "packer-aws-laravel" {
  ami_name      = "packer-aws-laravel-${local.timestamp}"
  instance_type = "t2.micro"
@@ -97,7 +101,6 @@ source "amazon-ebs" "packer-aws-laravel" {
  }
  ssh_username = "ubuntu"
 }
-```
 ```
 
 ami\_name = “packer-aws-laravel-${local.timestamp}”
@@ -121,12 +124,10 @@ This plays an important role in the case of rollbacks, as you already have a tag
 ### Uploading source code
 
 ```
-<pre class="wp-block-code">```
 provisioner "file" {
  source = "packer-aws-laravel.zip"
  destination = "/home/ubuntu/packer-aws-laravel.zip"
 }
-```
 ```
 
 In this example, I considered having my source code uploaded as a zip file. You can go ahead and make a better way of doing this alternatively. Making use of git with ssh &amp; pulling in the .env from AWS Secret Manager.
