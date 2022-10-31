@@ -28,7 +28,7 @@ twitter_username: prajyotpro
 github_username:  prajyotpro
 
 # Build settings
-theme: jekyll-theme-clean-blog
+theme: minima
 plugins:
   - jekyll-feed
 
