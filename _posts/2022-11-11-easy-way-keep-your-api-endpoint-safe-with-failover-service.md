@@ -4,13 +4,13 @@ title: 'System Design: Easy way to keep Your API Endpoint Safe With a Failover S
 date: '2022-11-11T13:49:39+00:00'
 author: 'Prajyot Khandeparkar'
 layout: post
-guid: 'https://www.prajyotkhandeparkar.com/?p=303'
-permalink: /clean-code-variable-naming-guide/
+guid: 'https://www.prajyotkhandeparkar.com/?p=304'
+permalink: /easy-way-keep-your-api-endpoint-safe-with-failover-service/
 blogcraft_post_sidebar_option:
     - global-sidebar
 twp_disable_ajax_load_next_post:
     - global-layout
-image: /wp-content/uploads/2022/08/pexels-markus-spiske-2004161.jpg
+image: /wp-content/uploads/2022/11/pexels-brett-jordan-9141232.jpg
 categories:
     - System Design
 tags:
