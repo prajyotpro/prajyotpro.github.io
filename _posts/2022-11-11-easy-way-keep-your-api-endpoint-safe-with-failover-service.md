@@ -89,8 +89,8 @@ Here is what the updated design looks like
 <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html">https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/high_availability_origin_failover.html</a>
 
 ### Alternatives
-You can also make use of separate database for service B, in case of database failure. In that case you will require to make use of observers and events to sync between the databases.
+In case of database failure of service A, wou should also make use of separate database for service B. In that case you will require to make use of observers and events to sync between the databases.
 
-Understand that service B (Plan B) is always not good, as you are not firstly confident about the service A (Plan A) firstly.
+Understand that service B (Plan B) is always not good and you should try to avoid it as much as possible, reason being it shows that you are not confident about the service A (Plan A).
 
-The above is for quick solutions on the peak traffic. Team should always revisit the tech debts in the system and try to improve on it in service A itself.
+The above post is for quick solutions for the peak traffic. Team should always revisit the tech debts in the system and try to improve on it in service A itself.
