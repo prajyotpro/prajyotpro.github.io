@@ -14,16 +14,12 @@ twp_disable_ajax_load_next_post:
     - global-layout
 ---
 
-
-{% for category in site.categories %}
-  <h3>{{ category[0] }}</h3>
+{% for post in site.posts %}
   <div>
-    {% for post in category[1] %}
       <p>
         <a href="{{ post.url }}"><b>{{ post.title }}</b></a>
-        <br>{{ post.date }}
+        <br>in <b>{{ post.categories[0] }}</b> on {{ post.date }}
         <!-- <p>{{ post.excerpt }}</p> -->
       </p>
-    {% endfor %}
   </div>
 {% endfor %}
