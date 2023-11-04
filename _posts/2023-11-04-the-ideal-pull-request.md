@@ -17,8 +17,8 @@ Is this concerning? Let's talk about a few factors that can delay or reject pull
  4. The pull request is too big to review effectively.
  5. Developers don't have enough time to review new pull requests.
 
-</br>
-<img src="../wp-content/uploads/2023/pexels-olia-danilevich-4974915.jpg" /> </br></br>
+<br>
+<img src="/wp-content/uploads/2023/pexels-olia-danilevich-4974915.jpg" /> <br><br>
 
 
 
@@ -40,8 +40,8 @@ Here is a quick look at a ticket checklist for software development lifecycle (S
  6. **Test ticket:** This section provides details about the testing scenarios, unit tests, and regression tests that need to be performed.
 
 
-</br>
-<img src="../wp-content/uploads/2023/pexels-olia-danilevich-4974920.jpg" /> </br></br>
+<br>
+<img src="/wp-content/uploads/2023/pexels-olia-danilevich-4974920.jpg" /> <br><br>
 
 
 ### Discussing and planning ahead of code
@@ -62,7 +62,8 @@ According to the SOLID principles, we can apply the concepts of cohesion and sep
 
 A pull request with numerous file changes and a vague title can leave reviewers confused about the purpose of the request. Imagine reviewing a pull request that modifies five files and has the description “bugfix.”
 Would this provide enough context for a thorough review? Such situations often raise questions about why the author didn’t take the time to provide a more detailed description.
-Review my preview post on how a  pull request template can help you be more effecient in the process: https://www.prajyotkhandeparkar.com/2023/10/19/why-do-we-need-a-pull-request-template.html
+Review my preview post on how a  pull request template can help you be more effecient in the process: 
+[https://www.prajyotkhandeparkar.com/2023/10/19/why-do-we-need-a-pull-request-template.html](https://www.prajyotkhandeparkar.com/2023/10/19/why-do-we-need-a-pull-request-template.html)
 
 
 
