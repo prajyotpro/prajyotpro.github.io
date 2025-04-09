@@ -7,8 +7,10 @@ author: 'Prajyot Khandeparkar'
 
 ### Case Study: Issue with Serverless and elastic cache Redis
 
-The backend serverless system experienced connection issues with AWS Elasticache Redis during a period of high API request volume, which was caused by a scheduled event on client applications. 
-This resulted in a lot of 5XX errors.
+<br>
+#### Case
+
+The backend serverless system experienced connectivity disruptions with AWS ElastiCache Redis during a period of elevated API request volume stemming from a scheduled event on client applications. This resulted in a significant number of 5XX error responses.
 
 <br>
 #### The Error
