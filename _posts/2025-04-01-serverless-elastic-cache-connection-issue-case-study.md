@@ -175,7 +175,7 @@ Optimized connection management facilitated reliable execution under significant
 **Reactive vs Proactive**
 
 Need to consider a few new pipeline action items at the
-`stag` environment to improve reliability testing and implement load testing.
+`stage` environment to improve reliability testing and implement load testing.
 
 **Researching on better pooling mechanism libraries**
 
