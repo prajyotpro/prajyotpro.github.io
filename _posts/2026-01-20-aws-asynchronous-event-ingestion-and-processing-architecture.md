@@ -111,12 +111,12 @@ The resilience and recovery mechanism.
 Entry Point: Global External HTTP(S) Load Balancer (ALB equivalent)
 - Static IP: Provides a single, static Anycast IP address to whitelist for any third party. 
 
-### 9. Code
+### 8. Code
 A fully serverless, async message processing system built with AWS Lambda, API Gateway, and SQS, deployed via Terraform and TypeScript.
 
 - [https://github.com/prajyotpro/muffin-serverless-events](https://github.com/prajyotpro/muffin-serverless-events)
 
-### 8. References
+### 9. References
 
 - [ Sending and receiving webhooks on AWS: Innovate with event notifications  Amazon Web](https://aws.amazon.com/blogs/compute/sending-and-receiving-webhooks-on-aws-innovate-with-event-notifications/)
 - [Queue-Based Load Leveling pattern - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
