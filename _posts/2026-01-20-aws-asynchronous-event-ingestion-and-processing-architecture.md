@@ -22,7 +22,8 @@ This documentation outlines the Asynchronous Event Ingestion and Processing Arch
 5. [Request Flow Sequence](#5-request-flow-sequence)
 6. [Architectural Justification: Why Asynchronous Validation?](#6-architectural-justification-why-asynchronous-validation)
 7. [Future enhancement](#7-future-enhancement)
-8. [References](#8-references)
+8. [Code](#8-code)
+9. [References](#9-references)
 
 
 ### 1. Overview
@@ -103,15 +104,19 @@ The resilience and recovery mechanism.
 7. Architectural Justification: Why Asynchronous Validation? This design prioritizes Durability over Immediate Rejection.
    - Resilience to External Changes: Third-party webhooks (like Shopify) are subject to change. If we enforced strict validation at the API Gateway (as suggested in your peer review), a new, unmapped field from Shopify would cause a  400 Bad Request , and the data would be lost forever.
    - Reliability: By accepting the data first, we ensure we have a "copy of record." If the validation fails in the Worker, we have the ability to fix our code and replay the event from the DLQ.
-   - Client Experience: Webhook providers require fast response times to prevent retries and back-offs. This architecture minimises the synchronous work, ensuring we meet these strict time constraints.
+   - Client Experience: Webhook providers require fast response times to prevent retries and back-offs. This architecture minimizes the synchronous work, ensuring we meet these strict time constraints.
 
 ### 7. Future enhancement
 
 Entry Point: Global External HTTP(S) Load Balancer (ALB equivalent)
 - Static IP: Provides a single, static Anycast IP address to whitelist for any third party. 
 
+### 9. Code
+A fully serverless, async message processing system built with AWS Lambda, API Gateway, and SQS, deployed via Terraform and TypeScript.
+
+- [https://github.com/prajyotpro/muffin-serverless-events](https://github.com/prajyotpro/muffin-serverless-events)
+
 ### 8. References
 
-- [ Sending and receiving webhooks on AWS: Innovate with event notifications | Amazon Web](https://aws.amazon.com/blogs/compute/sending-and-receiving-webhooks-on-aws-innovate-with-event-notifications/)
-
+- [ Sending and receiving webhooks on AWS: Innovate with event notifications  Amazon Web](https://aws.amazon.com/blogs/compute/sending-and-receiving-webhooks-on-aws-innovate-with-event-notifications/)
 - [Queue-Based Load Leveling pattern - Azure Architecture Center](https://learn.microsoft.com/en-us/azure/architecture/patterns/queue-based-load-leveling)
