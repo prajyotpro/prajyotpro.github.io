@@ -1,4 +1,11 @@
-﻿AWS: Asynchronous Event Ingestion and Processing Architecture
+﻿---
+layout: post
+title:  "AWS: Asynchronous Event Ingestion and Processing Architecture"
+author: 'Prajyot Khandeparkar'
+---
+
+
+### AWS: Asynchronous Event Ingestion and Processing Architecture
 
 This documentation outlines the Asynchronous Event Ingestion and Processing Architecture designed for high-scale webhook integration from clients  OR third-party providers.
 
@@ -36,7 +43,7 @@ The architecture follows a Decoupled Producer-Consumer pattern. Its primary obje
 
 ### 3. High-Level Architecture Diagram
 <br>
-<img src="/wp-content/uploads/2026/event-injection-workers.png" />
+<img src="/wp-content/uploads/2026/event-injection-workers.png" width="100%" alt="High-Level Architecture Diagram" />
 <br>
 
 ### 4. Component Specifications
