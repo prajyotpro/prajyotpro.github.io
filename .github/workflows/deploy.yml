@@ -36,4 +36,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/deploy-pages@v4
+      - name: Download artifact
+        uses: actions/download-pages-artifact@v3
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
