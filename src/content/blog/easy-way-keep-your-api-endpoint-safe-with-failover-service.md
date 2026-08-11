@@ -2,11 +2,12 @@
 title: "System Design: Easy way to keep Your API Endpoint Safe With a Failover Service for peak season - AWS CDN"
 description: "Blog post"
 pubDate: 2022-11-11T13:49:39.000Z
-heroImage: "/wp-content/uploads/2022/11/pexels-brett-jordan-9141232.jpg"
+heroImage: "../../assets/images/2022/11/pexels-brett-jordan-9141232.jpg"
 tags: ["Code","Work"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">3</span> <span class="rt-label rt-postfix">min read</span></span>

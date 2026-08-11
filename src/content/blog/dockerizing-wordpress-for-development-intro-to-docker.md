@@ -2,11 +2,12 @@
 title: "Dockerizing WordPress for development &#8211; intro to Docker"
 description: "Blog post"
 pubDate: 2020-05-30T04:40:21.000Z
-heroImage: "/wp-content/uploads/2020/05/wordpress-973439_640.jpg"
+heroImage: "../../assets/images/2020/05/wordpress-973439_640.jpg"
 tags: ["Code","DevOps","Docker","Dockerfile","Wordpress","Work"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">6</span> <span class="rt-label rt-postfix">min read</span></span><span style="font-weight: 400;">Hey fellas, hope you are all doing good. Things are moving pretty much online these days, we all know social distancing is important, and online is the way to get things done quickly. WordPress has been playing a major role in blogging, providing an amazing platform for content creators and editors. In today’s read, we are going to Dockerize WordPress for development. </span>

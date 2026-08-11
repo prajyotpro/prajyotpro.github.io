@@ -2,7 +2,7 @@
 title: "Initial Backend Project Setup Sync"
 description: "Blog post"
 pubDate: 2022-07-02T17:03:06.000Z
-heroImage: "/wp-content/uploads/2022/07/pexels-kevin-ku-5775851.jpg"
+heroImage: "../../assets/images/2022/07/pexels-kevin-ku-5775851.jpg"
 tags: ["DevOps","Docker","Work"]
 author: "Prajyot Khandeparkar"
 draft: false

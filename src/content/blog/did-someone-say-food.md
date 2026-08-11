@@ -2,11 +2,12 @@
 title: "Did someone say food?"
 description: "Blog post"
 pubDate: 2018-04-27T05:26:52.000Z
-heroImage: "/wp-content/uploads/2018/04/D66A296E-CFA0-4B29-951D-AC42681A4C1D.jpeg"
+heroImage: "../../assets/images/2018/04/D66A296E-CFA0-4B29-951D-AC42681A4C1D.jpeg"
 tags: ["Cooking","Food","Love"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">3</span> <span class="rt-label rt-postfix">min read</span></span>Something which makes me happy anytime of the day. Good food! Oh yeah! It is amazing if you can create happiness. Hehe.. I mean, to cook good food!<span class="Apple-converted-space"> </span>

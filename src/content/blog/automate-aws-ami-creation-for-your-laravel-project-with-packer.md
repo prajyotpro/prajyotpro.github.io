@@ -2,11 +2,12 @@
 title: "Automate AWS AMI creation for your Laravel Project with Packer"
 description: "Blog post"
 pubDate: 2022-08-07T18:56:11.000Z
-heroImage: "/wp-content/uploads/2022/08/pexels-mikhail-fesenko-95539051.jpg"
+heroImage: "../../assets/images/2022/08/pexels-mikhail-fesenko-95539051.jpg"
 tags: ["AWS","Code","DevOps","Infrastructure","Work"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">4</span> <span class="rt-label rt-postfix">min read</span></span>## Intro

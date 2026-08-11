@@ -2,11 +2,12 @@
 title: "Covid19 Vaccine &#8211; CoWIN &#8211; Script to search slot and get notified."
 description: "Blog post"
 pubDate: 2021-05-20T18:36:07.000Z
-heroImage: "/wp-content/uploads/2021/05/pexels-alena-shekhovtcova-6074971.jpg"
+heroImage: "../../assets/images/2021/05/pexels-alena-shekhovtcova-6074971.jpg"
 tags: ["Code","Covid19","CoWin","Vaccine"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">2</span> <span class="rt-label rt-postfix">min read</span></span>I have been trying to book a slot on the Co-WIN web application, and it always says booked! – do you feel the same as me?

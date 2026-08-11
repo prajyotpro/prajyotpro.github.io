@@ -2,11 +2,12 @@
 title: "Why self time is important."
 description: "Blog post"
 pubDate: 2019-04-16T12:32:30.000Z
-heroImage: "/wp-content/uploads/2019/04/time-3216244_640.jpg"
+heroImage: "../../assets/images/2019/04/time-3216244_640.jpg"
 tags: ["LifeStyle","Work"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">3</span> <span class="rt-label rt-postfix">min read</span></span><span style="font-weight: 400;">**Time** spent on yourself makes you learn, grow and develop in a way you want. It is self **care**, it is self **love**. </span>

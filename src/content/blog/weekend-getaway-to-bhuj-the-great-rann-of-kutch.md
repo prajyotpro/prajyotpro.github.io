@@ -2,11 +2,12 @@
 title: "Weekend getaway to Bhuj &#038; the Great Rann of Kutch"
 description: "Blog post"
 pubDate: 2018-02-10T21:02:33.000Z
-heroImage: "/wp-content/uploads/2018/02/IMG_0041.jpeg"
+heroImage: "../../assets/images/2018/02/IMG_0041.jpeg"
 tags: ["Travel"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">5</span> <span class="rt-label rt-postfix">min read</span></span>Attending wedding in Gujarat she said, want to join in? Not for the wedding but I was more excited to visit Gujarat. And when someone says Gujarat!! Kutch is something which hits your mind first.

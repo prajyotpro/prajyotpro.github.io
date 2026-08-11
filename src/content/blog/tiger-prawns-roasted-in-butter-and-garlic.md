@@ -2,11 +2,12 @@
 title: "Tiger prawns roasted in butter and garlic"
 description: "Blog post"
 pubDate: 2020-06-10T21:05:04.000Z
-heroImage: "/wp-content/uploads/2020/06/Webp.net-resizeimage-2-700x525.jpg"
+heroImage: "../../assets/images/2020/06/Webp.net-resizeimage-2-700x525.jpg"
 tags: ["Food"]
 author: "Prajyot Khandeparkar"
 draft: false
 ---
+
 
 
 <span class="rt-reading-time" style="display: block;"><span class="rt-label rt-prefix"></span> <span class="rt-time">2</span> <span class="rt-label rt-postfix">min read</span></span>Hi folks, been a while I’ve posted any food article. Time to break the silence 😀 Today I’m going to post one of my favourite and quick recipes – prawn roasted in butter and garlic.
