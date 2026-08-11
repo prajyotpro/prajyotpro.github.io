@@ -1,49 +1,191 @@
 ---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { SITE_DESCRIPTION, SITE_TITLE, AUTHOR_NAME } from '../consts';
+
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 5);
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1">
+      <!-- Hero Section -->
+      <section class="relative py-20 sm:py-28 lg:py-32 overflow-hidden">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="max-w-3xl animate-fade-in">
+            <p class="text-primary font-medium tracking-wide uppercase text-sm mb-4">Software Engineer & Cloud Architect</p>
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[var(--color-text)] text-balance mb-6">
+              Hi, I'm {AUTHOR_NAME}
+            </h1>
+            <p class="text-lg sm:text-xl text-[var(--color-text-muted)] leading-relaxed mb-8 max-w-2xl">
+              Building scalable systems, clean code advocate, and perpetual learner. 
+              I write about backend engineering, cloud architecture, and software craftsmanship.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href="/blog" class="btn-primary">Read Blog</a>
+              <a href="/about" class="btn-secondary">About Me</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Decorative elements -->
+        <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+          <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
+          <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
+        </div>
+      </section>
+
+      <!-- Latest Posts -->
+      <section class="py-16 sm:py-20 bg-[var(--color-bg-secondary)]">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="flex items-center justify-between mb-12">
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--color-text)]">
+                Latest Posts
+              </h2>
+              <p class="mt-2 text-[var(--color-text-muted)]">
+                Thoughts on engineering, architecture, and craft
+              </p>
+            </div>
+            <a href="/blog" class="btn-secondary hidden sm:inline-flex">
+              View All Posts
+            </a>
+          </div>
+          
+          {posts.length === 0 ? (
+            <div class="text-center py-12 text-[var(--color-text-muted)]">
+              <p>No posts yet. Check back soon!</p>
+            </div>
+          ) : (
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <article class="card animate-slide-up group">
+                  {post.data.heroImage && (
+                    <a href={`/blog/${post.id}/`} class="block overflow-hidden">
+                      <Image
+                        src={post.data.heroImage}
+                        alt=""
+                        width={600}
+                        height={338}
+                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </a>
+                  )}
+                  <div class="p-6">
+                    <div class="flex flex-wrap items-center gap-2 mb-3 text-sm text-[var(--color-text-muted)]">
+                      <time datetime={post.data.pubDate.toISOString()}>
+                        {post.data.pubDate.toLocaleDateString('en-us', {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </time>
+                      {post.data.tags && post.data.tags.length > 0 && (
+                        <span class="flex flex-wrap gap-1">
+                          {post.data.tags.slice(0, 2).map(tag => (
+                            <span key={tag} class="px-2 py-0.5 text-xs font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">
+                              {tag}
+                            </span>
+                          ))}
+                        </span>
+                      )}
+                    </div>
+                    <h3 class="text-xl font-bold text-[var(--color-text)] group-hover:text-primary transition-colors mb-2">
+                      <a href={`/blog/${post.id}/`}>
+                        {post.data.title}
+                      </a>
+                    </h3>
+                    <p class="text-[var(--color-text-muted)] leading-relaxed line-clamp-3">
+                      {post.data.description}
+                    </p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+          
+          <div class="mt-12 text-center sm:hidden">
+            <a href="/blog" class="btn-primary">View All Posts</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Preview -->
+      <section class="py-16 sm:py-20">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--color-text)] mb-6">
+                About Me
+              </h2>
+              <div class="prose max-w-none">
+                <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
+                  Software Development Engineer & Cloud Solution Architect enthusiast. 
+                  I pursued my Master's degree in Computer Science from Goa University.
+                </p>
+                <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
+                  I like to solve bigger problems by breaking them into smaller chunks, 
+                  helping organizations grow and meet their goals in time.
+                </p>
+                <p class="text-[var(--color-text-muted)] leading-relaxed mb-6">
+                  Also helping to onboard smaller businesses to showcase on the worldwide web, 
+                  with minimal expense.
+                </p>
+                <a href="/about" class="btn-primary inline-flex">
+                  Read More
+                </a>
+              </div>
+            </div>
+            <div class="bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-2xl p-8">
+              <h3 class="text-xl font-bold text-[var(--color-text)] mb-6">Career Highlights</h3>
+              <ul class="space-y-4">
+                <li class="flex gap-3">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-[var(--color-text-muted)]">On-boarded 2 start-ups on e-commerce platforms at minimal cost</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-[var(--color-text-muted)]">Redesigned legacy systems to scalable Three-Tier Architecture</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-[var(--color-text-muted)]">Rebuilt monoliths to microservice architectures</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-[var(--color-text-muted)]">Built real-time delivery apps & geospatial platforms</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                  </span>
+                  <span class="text-[var(--color-text-muted)]">Mitigated DDoS attacks with security hardening & E2EE</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </body>
 </html>

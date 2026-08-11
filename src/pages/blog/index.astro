@@ -7,108 +7,81 @@ import FormattedDate from '../../components/FormattedDate.astro';
 import Header from '../../components/Header.astro';
 import { SITE_DESCRIPTION, SITE_TITLE } from '../../consts';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (await getCollection('blog'))
+  .filter(post => !post.data.draft)
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 py-12">
+      <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <header class="mb-12 text-center animate-fade-in">
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-[var(--color-text)]">
+            Blog
+          </h1>
+          <p class="mt-4 text-lg text-[var(--color-text-muted)] max-w-2xl mx-auto">
+            {SITE_DESCRIPTION}
+          </p>
+        </header>
+        
+        {posts.length === 0 ? (
+          <div class="text-center py-12 text-[var(--color-text-muted)]">
+            <p>No posts yet. Check back soon!</p>
+          </div>
+        ) : (
+          <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <article class="card animate-slide-up group">
+                {post.data.heroImage && (
+                  <a href={`/blog/${post.id}/`} class="block overflow-hidden">
+                    <Image
+                      src={post.data.heroImage}
+                      alt=""
+                      width={600}
+                      height={338}
+                      class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
+                    />
+                  </a>
+                )}
+                <div class="p-6">
+                  <div class="flex flex-wrap items-center gap-2 mb-3 text-sm text-[var(--color-text-muted)]">
+                    <FormattedDate date={post.data.pubDate} />
+                    {post.data.tags && post.data.tags.length > 0 && (
+                      <span class="flex flex-wrap gap-1">
+                        {post.data.tags.slice(0, 2).map(tag => (
+                          <span key={tag} class="px-2 py-0.5 text-xs font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">
+                            {tag}
+                          </span>
+                        ))}
+                        {post.data.tags.length > 2 && (
+                          <span class="px-2 py-0.5 text-xs font-medium text-[var(--color-text-muted)]">
+                            +{post.data.tags.length - 2}
+                          </span>
+                        )}
+                      </span>
+                    )}
+                  </div>
+                  <h2 class="text-xl font-bold text-[var(--color-text)] group-hover:text-primary transition-colors mb-2">
+                    <a href={`/blog/${post.id}/`}>
+                      {post.data.title}
+                    </a>
+                  </h2>
+                  <p class="text-[var(--color-text-muted)] leading-relaxed line-clamp-3">
+                    {post.data.description}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>
