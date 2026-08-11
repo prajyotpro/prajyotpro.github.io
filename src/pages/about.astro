@@ -25,59 +25,133 @@ import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR_NAME, AUTHOR_EMAIL } from '../cons
             About {AUTHOR_NAME}
           </h1>
           <p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
-            Software Development Engineer & Cloud Solution Architect. Building scalable systems and sharing knowledge.
+            Engineering Manager & Cloud Solution Architect — Building AI agent-driven systems, scaling high-performance teams, and architecting resilient cloud infrastructure.
           </p>
         </header>
 
-        <!-- Bio -->
+        <!-- Professional Summary -->
         <section class="mb-16 animate-slide-up">
-          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Bio</h2>
-          <div class="prose max-w-none">
-            <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
-              <strong>{AUTHOR_NAME}</strong> is a <strong>Software Development Engineer</strong> & <strong>Cloud Solution Architect</strong> enthusiast. 
-              He pursued his Master's degree in <strong>Computer Science</strong> from <strong>Goa University</strong>.
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Professional Summary</h2>
+          <div class="prose max-w-none text-[var(--color-text-muted)] leading-relaxed">
+            <p class="mb-4">
+              As an <strong>Engineering Manager</strong> and <strong>Cloud Solution Architect</strong>, I focus on building high-performing teams while driving technical excellence across key architectural pillars. I specialize in defining organizational processes—setting up Git workflows and continuous release pipelines—and actively managing and mentoring resources to ensure the right talent is placed on the right project.
             </p>
-            <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
-              He likes to solve bigger problems by breaking them into smaller chunks, 
-              with that he tries to help organisations grow and meet their goals in time.
-            </p>
-            <p class="text-[var(--color-text-muted)] leading-relaxed mb-4">
-              Also, helping to onboard smaller businesses to showcase on the worldwide web, 
-              with minimal expense.
+            <p class="mb-4"><strong>Strategic Impact Areas:</strong></p>
+            <ul class="space-y-3 ml-6">
+              <li><strong>Observability & Operational Health:</strong> Establishing robust monitoring systems using CloudWatch, New Relic, Loki, Grafana, and Sentry for deep system visibility, proactive bottleneck identification, and application resilience.</li>
+              <li><strong>Specialized Data & Geospatial Expertise:</strong> Designing platforms handling complex multi-database geo-spatial data, custom algorithms for real-time delivery apps, and front-end modules rendering satellite raster images in browsers.</li>
+              <li><strong>Efficiency & Cost Optimization:</strong> Designing cost-effective serverless applications and migrating monoliths to resilient microservice architectures.</li>
+              <li><strong>Scalability & Reliability:</strong> Architecting real-time systems using event streaming services (Kinesis) for robust, high-volume data capture.</li>
+              <li><strong>Security & Resilience:</strong> Fortifying applications against threats, including successful redesign to overcome automated DDoS botnet attacks.</li>
+            </ul>
+            <p class="mt-4 mb-4">
+              Beyond engineering, I leverage my skills to help small businesses establish a minimal-expense web presence.
             </p>
           </div>
         </section>
 
-        <!-- Career Highlights -->
+        <!-- Experience -->
         <section class="mb-16 animate-slide-up">
-          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Career Highlights</h2>
-          <div class="space-y-4">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Experience</h2>
+          <div class="space-y-6">
+            <div class="card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">Engineering Manager & Cloud Solution Architect</h3>
+                  <p class="text-primary font-medium mt-1">Heady (Mumbai)</p>
+                </div>
+                <span class="text-sm text-[var(--color-text-muted)] whitespace-nowrap">2019 – Present</span>
+              </div>
+              <ul class="space-y-3 text-[var(--color-text-muted)]">
+                <li>• Lead backend engineering team at Mumbai office; mentor junior developers and drive engineering best practices</li>
+                <li>• Established Git workflows, CI/CD pipelines, and release processes</li>
+                <li>• Architected observability stack: CloudWatch, New Relic, Loki, Grafana, Sentry</li>
+                <li>• Designed serverless applications and migrated monoliths to microservices</li>
+                <li>• Built geospatial data platforms with multi-database integrations</li>
+                <li>• Implemented event-driven systems using Kinesis for high-volume real-time data</li>
+                <li>• Fortified applications against DDoS attacks with security hardening & E2EE</li>
+              </ul>
+            </div>
+
+            <div class="card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">Senior Backend Engineer</h3>
+                  <p class="text-primary font-medium mt-1">Transerve Technologies</p>
+                </div>
+                <span class="text-sm text-[var(--color-text-muted)] whitespace-nowrap">2016 – 2019</span>
+              </div>
+              <ul class="space-y-3 text-[var(--color-text-muted)]">
+                <li>• Built core backend infrastructure for geospatial platforms</li>
+                <li>• Developed custom algorithms for real-time delivery applications</li>
+                <li>• Created front-end modules for satellite raster image rendering</li>
+                <li>• Established coding culture and mentored team members</li>
+              </ul>
+            </div>
+
+            <div class="card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">Software Developer</h3>
+                  <p class="text-primary font-medium mt-1">SJ Innovation LLC</p>
+                </div>
+                <span class="text-sm text-[var(--color-text-muted)] whitespace-nowrap">2014 – 2016</span>
+              </div>
+              <ul class="space-y-3 text-[var(--color-text-muted)]">
+                <li>• Full-stack development across multiple client projects</li>
+                <li>• Handled complex deployment and production scenarios</li>
+                <li>• Collaborated cross-functionally with frontend, QA, and product teams</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recommendations / Testimonials -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">What Colleagues Say</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="card p-6">
-              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">E-commerce & Startups</h3>
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Innate bias for action, accountability, and mentorship. Central figure in building good coding culture. Professional stakeholder communication."</p>
+              <p class="font-medium text-[var(--color-text)]">— Rahul Verlekar, Sr Mobile Developer, Numadic</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Strong analytical thinking, attention to detail, and ownership. Collaborative mindset, natural leadership, builds trust easily."</p>
+              <p class="font-medium text-[var(--color-text)]">— Vivek Rane, Senior Technical Lead, AXZORA</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Consistently impressed with leadership, technical expertise, and adaptability. Established robust processes improving code quality and delivery speed."</p>
+              <p class="font-medium text-[var(--color-text)]">— Chris Galatioto, Director of Engineering, Crate and Barrel</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Evolution from strong senior engineer to thoughtful engineering manager. Balance of technical depth and team empathy. Team naturally turns to him for guidance."</p>
+              <p class="font-medium text-[var(--color-text)]">— Ishita Awasthi, Senior HR & Talent Consultant, Heady</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"One of the best engineers I've worked with. Incredibly caring, invested in career growth, meticulous documentation, thoughtful communication."</p>
+              <p class="font-medium text-[var(--color-text)]">— Terri L, Director of Project Management, BX Studio</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Strong technical vision with calm, solution-oriented mindset. Balances leadership with hands-on involvement. Clear, efficient cross-functional collaboration."</p>
+              <p class="font-medium text-[var(--color-text)]">— Priyanka Thorat, QA/QC Engineer, Tushop</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Education & Certifications</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="card p-6">
+              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-3">Education</h3>
               <ul class="space-y-2 text-[var(--color-text-muted)]">
-                <li>• On-boarded 2 start-ups on an e-commerce platform at a minimal cost</li>
+                <li>• <strong>Master's in Computer Science</strong> — Goa University</li>
               </ul>
             </div>
             <div class="card p-6">
-              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Architecture Transformation</h3>
+              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-3">Certifications</h3>
               <ul class="space-y-2 text-[var(--color-text-muted)]">
-                <li>• Helped an organisation to redesign an existing legacy system to a scalable Three-Tier Architecture</li>
-                <li>• Helped an organisation to rebuild its huge real-time system from a monolith to a scalable microservice architecture</li>
-              </ul>
-            </div>
-            <div class="card p-6">
-              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Real-time Systems</h3>
-              <ul class="space-y-2 text-[var(--color-text-muted)]">
-                <li>• Helped an organisation to build a project and an algorithm for an online real-time delivery app</li>
-                <li>• Helped an organisation to create a platform for dynamic forms to collect geo-spatial data with multi-database integrations</li>
-                <li>• Created a frontend module to render satellite raster images in the browser with geospatial information</li>
-              </ul>
-            </div>
-            <div class="card p-6">
-              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-2">Security & Resilience</h3>
-              <ul class="space-y-2 text-[var(--color-text-muted)]">
-                <li>• Re-designed an app to overcome an automated DDoS Botnet attack</li>
-                <li>• Added security updates to the backend and E2EE on both client and backend</li>
+                <li>• PADI Certified – Open Water Diver</li>
+                <li>• Certified Fitness Coach</li>
               </ul>
             </div>
           </div>
@@ -85,7 +159,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR_NAME, AUTHOR_EMAIL } from '../cons
 
         <!-- Personal Interests -->
         <section class="mb-16 animate-slide-up">
-          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Beyond Code</h2>
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Beyond Engineering</h2>
           <div class="grid sm:grid-cols-2 gap-6">
             <div class="card p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -94,7 +168,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR_NAME, AUTHOR_EMAIL } from '../cons
                 </div>
                 <h3 class="text-lg font-semibold text-[var(--color-text)]">Travel & Adventure</h3>
               </div>
-              <p class="text-[var(--color-text-muted)]">Loves to travel. PADI Certified – Open Water Diver. Explored places like the Great Rann of Kutch, Mount Abu, and more.</p>
+              <p class="text-[var(--color-text-muted)]">PADI Certified Open Water Diver. Explored places like the Great Rann of Kutch, Mount Abu, and more. Love discovering new cultures and landscapes.</p>
             </div>
             <div class="card p-6">
               <div class="flex items-center gap-3 mb-3">
@@ -103,8 +177,27 @@ import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR_NAME, AUTHOR_EMAIL } from '../cons
                 </div>
                 <h3 class="text-lg font-semibold text-[var(--color-text)]">Fitness & Coaching</h3>
               </div>
-              <p class="text-[var(--color-text-muted)]">Fitness enthusiast and Certified Fitness Coach. Believes in maintaining optimal daily performance at work and life.</p>
+              <p class="text-[var(--color-text-muted)]">Certified Fitness Coach. Believe in maintaining optimal daily performance at work and life through consistent training and wellness practices.</p>
             </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Tech Stack & Expertise</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">AWS (Lambda, API Gateway, SQS, Kinesis, CloudWatch)</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Serverless & Microservices</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Terraform / IaC</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Node.js / TypeScript</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Python</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Docker / Kubernetes</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">New Relic / Grafana / Loki / Sentry</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Git / CI/CD</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Geospatial Data Systems</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Event-Driven Architecture</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Security Hardening / E2EE</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Team Leadership & Mentoring</span>
           </div>
         </section>
 
@@ -113,13 +206,14 @@ import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR_NAME, AUTHOR_EMAIL } from '../cons
           <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Get in Touch</h2>
           <div class="card p-6 sm:p-8">
             <p class="text-[var(--color-text-muted)] mb-6 max-w-xl">
-              I'm always open to discussing interesting projects, collaboration opportunities, or just having a chat about technology.
+              I'm always open to discussing interesting projects, collaboration opportunities, or just having a chat about technology, architecture, or fitness.
             </p>
             <div class="flex flex-wrap gap-4">
               <a href={`mailto:${AUTHOR_EMAIL}`} class="btn-primary">Email Me</a>
-              <a href={`https://github.com/prajyotpro`} target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
-              <a href={`https://linkedin.com/in/prajyotpro`} target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
-              <a href={`https://twitter.com/prajyotpro`} target="_blank" rel="noopener noreferrer" class="btn-secondary">Twitter</a>
+              <a href="https://github.com/prajyotpro" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
+              <a href="https://linkedin.com/in/prajyotkhandeparkar" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+              <a href="https://twitter.com/prajyotpro" target="_blank" rel="noopener noreferrer" class="btn-secondary">Twitter</a>
+              <a href="http://www.prajyotkhandeparkar.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">Website</a>
             </div>
           </div>
         </section>
