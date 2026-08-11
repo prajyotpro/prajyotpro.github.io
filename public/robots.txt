@@ -1,0 +1,5 @@
+# Robots.txt for prajyotpro.github.io
+User-agent: *
+Allow: /
+
+Sitemap: https://prajyotpro.github.io/sitemap-index.xml

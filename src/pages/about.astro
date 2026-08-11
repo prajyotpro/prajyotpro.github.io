@@ -1,0 +1,301 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_TITLE, SITE_DESCRIPTION, AUTHOR_NAME, AUTHOR_EMAIL } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title="About Me" description={SITE_DESCRIPTION} />
+  </head>
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 py-12">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <!-- Hero -->
+        <header class="text-center mb-16 animate-fade-in">
+          <div class="mx-auto mb-8">
+            <div class="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-4xl font-bold">
+              PK
+            </div>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold tracking-tight text-[var(--color-text)] mb-4">
+            About {AUTHOR_NAME}
+          </h1>
+          <p class="text-xl text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
+            Engineering Manager & Cloud Solution Architect — Building AI agent-driven systems, scaling high-performance teams, and architecting resilient cloud infrastructure.
+          </p>
+        </header>
+
+        <!-- Professional Summary -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Professional Summary</h2>
+          <div class="prose max-w-none text-[var(--color-text-muted)] leading-relaxed">
+            <p class="mb-4">
+              As an <strong>Engineering Manager</strong> and <strong>Cloud Solution Architect</strong>, I focus on building high-performing teams while driving technical excellence across key architectural pillars. I specialize in defining organizational processes—setting up Git workflows and continuous release pipelines—and actively managing and mentoring resources to ensure the right talent is placed on the right project.
+            </p>
+            <p class="mb-4"><strong>Strategic Impact Areas:</strong></p>
+            <ul class="space-y-3 ml-6">
+              <li><strong>Observability & Operational Health:</strong> Establishing robust monitoring systems using CloudWatch, New Relic, Loki, Grafana, and Sentry for deep system visibility, proactive bottleneck identification, and application resilience.</li>
+              <li><strong>Specialized Data & Geospatial Expertise:</strong> Designing platforms handling complex multi-database geo-spatial data, custom algorithms for real-time delivery apps, and front-end modules rendering satellite raster images in browsers.</li>
+              <li><strong>Efficiency & Cost Optimization:</strong> Designing cost-effective serverless applications and migrating monoliths to resilient microservice architectures.</li>
+              <li><strong>Scalability & Reliability:</strong> Architecting real-time systems using event streaming services (Kinesis) for robust, high-volume data capture.</li>
+              <li><strong>Security & Resilience:</strong> Fortifying applications against threats, including successful redesign to overcome automated DDoS botnet attacks.</li>
+            </ul>
+            <p class="mt-4 mb-4">
+              Beyond engineering, I leverage my skills to help small businesses establish a minimal-expense web presence.
+            </p>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Experience</h2>
+          <div class="space-y-6">
+            <div class="card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">Engineering Manager & Cloud Solution Architect</h3>
+                  <p class="text-primary font-medium mt-1">Heady (Mumbai)</p>
+                </div>
+                <span class="text-sm text-[var(--color-text-muted)] whitespace-nowrap">2019 – Present</span>
+              </div>
+              <ul class="space-y-3 text-[var(--color-text-muted)]">
+                <li>• Lead backend engineering team at Mumbai office; mentor junior developers and drive engineering best practices</li>
+                <li>• Established Git workflows, CI/CD pipelines, and release processes</li>
+                <li>• Architected observability stack: CloudWatch, New Relic, Loki, Grafana, Sentry</li>
+                <li>• Designed serverless applications and migrated monoliths to microservices</li>
+                <li>• Built geospatial data platforms with multi-database integrations</li>
+                <li>• Implemented event-driven systems using Kinesis for high-volume real-time data</li>
+                <li>• Fortified applications against DDoS attacks with security hardening & E2EE</li>
+              </ul>
+            </div>
+
+            <div class="card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">Senior Backend Engineer</h3>
+                  <p class="text-primary font-medium mt-1">Transerve Technologies</p>
+                </div>
+                <span class="text-sm text-[var(--color-text-muted)] whitespace-nowrap">2016 – 2019</span>
+              </div>
+              <ul class="space-y-3 text-[var(--color-text-muted)]">
+                <li>• Built core backend infrastructure for geospatial platforms</li>
+                <li>• Developed custom algorithms for real-time delivery applications</li>
+                <li>• Created front-end modules for satellite raster image rendering</li>
+                <li>• Established coding culture and mentored team members</li>
+              </ul>
+            </div>
+
+            <div class="card p-6 sm:p-8">
+              <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-4">
+                <div>
+                  <h3 class="text-xl font-bold text-[var(--color-text)]">Software Developer</h3>
+                  <p class="text-primary font-medium mt-1">SJ Innovation LLC</p>
+                </div>
+                <span class="text-sm text-[var(--color-text-muted)] whitespace-nowrap">2014 – 2016</span>
+              </div>
+              <ul class="space-y-3 text-[var(--color-text-muted)]">
+                <li>• Full-stack development across multiple client projects</li>
+                <li>• Handled complex deployment and production scenarios</li>
+                <li>• Collaborated cross-functionally with frontend, QA, and product teams</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Recommendations / Testimonials -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">What Colleagues Say</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Innate bias for action, accountability, and mentorship. Central figure in building good coding culture. Professional stakeholder communication."</p>
+              <p class="font-medium text-[var(--color-text)]">— Rahul Verlekar, Sr Mobile Developer, Numadic</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Strong analytical thinking, attention to detail, and ownership. Collaborative mindset, natural leadership, builds trust easily."</p>
+              <p class="font-medium text-[var(--color-text)]">— Vivek Rane, Senior Technical Lead, AXZORA</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Consistently impressed with leadership, technical expertise, and adaptability. Established robust processes improving code quality and delivery speed."</p>
+              <p class="font-medium text-[var(--color-text)]">— Chris Galatioto, Director of Engineering, Crate and Barrel</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Evolution from strong senior engineer to thoughtful engineering manager. Balance of technical depth and team empathy. Team naturally turns to him for guidance."</p>
+              <p class="font-medium text-[var(--color-text)]">— Ishita Awasthi, Senior HR & Talent Consultant, Heady</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"One of the best engineers I've worked with. Incredibly caring, invested in career growth, meticulous documentation, thoughtful communication."</p>
+              <p class="font-medium text-[var(--color-text)]">— Terri L, Director of Project Management, BX Studio</p>
+            </div>
+            <div class="card p-6">
+              <p class="text-[var(--color-text-muted)] italic mb-4">"Strong technical vision with calm, solution-oriented mindset. Balances leadership with hands-on involvement. Clear, efficient cross-functional collaboration."</p>
+              <p class="font-medium text-[var(--color-text)]">— Priyanka Thorat, QA/QC Engineer, Tushop</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Education -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Education</h2>
+          <div class="card p-6">
+            <ul class="space-y-2 text-[var(--color-text-muted)]">
+              <li>• <strong>Master's in Computer Science</strong> — Goa University</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Professional Certifications -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Professional Certifications</h2>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="card p-5 border-primary/30">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-[var(--color-text)]">SI Associate Certification</h3>
+                  <p class="text-sm text-[var(--color-text-muted)]">MongoDB · Jul 2024</p>
+                  <p class="text-xs text-[var(--color-text-muted)] mt-1">Credential: MDBn4li0yyin5</p>
+                </div>
+              </div>
+            </div>
+            <div class="card p-5 border-primary/30">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-[var(--color-text)]">SI Architect Certification</h3>
+                  <p class="text-sm text-[var(--color-text-muted)]">MongoDB · Jan 2025</p>
+                  <p class="text-xs text-[var(--color-text-muted)] mt-1">Credential: 5caf9d6d-00d6-47a4-95d2-d7d195677dbc</p>
+                </div>
+              </div>
+            </div>
+            <div class="card p-5 border-primary/30">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-[var(--color-text)]">Building AI-Powered Search with MongoDB Vector Search</h3>
+                  <p class="text-sm text-[var(--color-text-muted)]">MongoDB · Oct 2025</p>
+                </div>
+              </div>
+            </div>
+            <div class="card p-5 border-primary/30">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-[var(--color-text)]">Claude 101</h3>
+                  <p class="text-sm text-[var(--color-text-muted)]">Anthropic · Apr 2026</p>
+                  <p class="text-xs text-[var(--color-text-muted)] mt-1">Credential: 936am2h4hstd</p>
+                </div>
+              </div>
+            </div>
+            <div class="card p-5 border-primary/30">
+              <div class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-[var(--color-text)]">Claude Code 101</h3>
+                  <p class="text-sm text-[var(--color-text-muted)]">Anthropic · Apr 2026</p>
+                  <p class="text-xs text-[var(--color-text-muted)] mt-1">Credential: 6pvp8jrikbvg</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Personal Certifications -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Personal Certifications</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="card p-6">
+              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-3 flex items-center gap-2">
+                <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                PADI Certified – Open Water Diver
+              </h3>
+              <p class="text-[var(--color-text-muted)]">Scuba diving certification</p>
+            </div>
+            <div class="card p-6">
+              <h3 class="text-lg font-semibold text-[var(--color-text)] mb-3 flex items-center gap-2">
+                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                Certified Fitness Coach
+              </h3>
+              <p class="text-[var(--color-text-muted)]">Fitness coaching certification</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Personal Interests -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Beyond Engineering</h2>
+          <div class="grid sm:grid-cols-2 gap-6">
+            <div class="card p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[var(--color-text)]">Travel & Adventure</h3>
+              </div>
+              <p class="text-[var(--color-text-muted)]">PADI Certified Open Water Diver. Explored places like the Great Rann of Kutch, Mount Abu, and more. Love discovering new cultures and landscapes.</p>
+            </div>
+            <div class="card p-6">
+              <div class="flex items-center gap-3 mb-3">
+                <div class="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-[var(--color-text)]">Fitness & Coaching</h3>
+              </div>
+              <p class="text-[var(--color-text-muted)]">Certified Fitness Coach. Believe in maintaining optimal daily performance at work and life through consistent training and wellness practices.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Tech Stack -->
+        <section class="mb-16 animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Tech Stack & Expertise</h2>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">AWS (Lambda, API Gateway, SQS, Kinesis, CloudWatch)</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Serverless & Microservices</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Terraform / IaC</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Node.js / TypeScript</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Python</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Docker / Kubernetes</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">New Relic / Grafana / Loki / Sentry</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Git / CI/CD</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Geospatial Data Systems</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Event-Driven Architecture</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Security Hardening / E2EE</span>
+            <span class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">Team Leadership & Mentoring</span>
+          </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="animate-slide-up">
+          <h2 class="text-2xl font-bold text-[var(--color-text)] mb-6 pb-2 border-b border-[var(--color-border)]">Get in Touch</h2>
+          <div class="card p-6 sm:p-8">
+            <p class="text-[var(--color-text-muted)] mb-6 max-w-xl">
+              I'm always open to discussing interesting projects, collaboration opportunities, or just having a chat about technology, architecture, or fitness.
+            </p>
+            <div class="flex flex-wrap gap-4">
+              <a href={`mailto:${AUTHOR_EMAIL}`} class="btn-primary">Email Me</a>
+              <a href="https://github.com/prajyotpro" target="_blank" rel="noopener noreferrer" class="btn-secondary">GitHub</a>
+              <a href="https://linkedin.com/in/prajyotkhandeparkar" target="_blank" rel="noopener noreferrer" class="btn-secondary">LinkedIn</a>
+              <a href="https://twitter.com/prajyotpro" target="_blank" rel="noopener noreferrer" class="btn-secondary">Twitter</a>
+              <a href="http://www.prajyotkhandeparkar.com" target="_blank" rel="noopener noreferrer" class="btn-secondary">Website</a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>

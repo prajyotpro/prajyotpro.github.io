@@ -1,0 +1,97 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+
+type Props = CollectionEntry<'blog'>['data'];
+
+const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead 
+      title={title} 
+      description={description} 
+      image={heroImage}
+      ogType="article"
+      publishedTime={pubDate.toISOString()}
+      modifiedTime={updatedDate?.toISOString()}
+      tags={tags}
+    />
+  </head>
+
+  <body class="min-h-screen flex flex-col">
+    <Header />
+    <main class="flex-1 py-12">
+      <article class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
+        {heroImage && (
+          <div class="mb-8 rounded-xl overflow-hidden shadow-xl">
+            <Image 
+              src={heroImage} 
+              alt={title} 
+              width={1200} 
+              height="50"
+              class="w-full h-auto"
+            />
+          </div>
+        )}
+        
+        <header class="mb-8 pb-8 border-b border-[var(--color-border)]">
+          <div class="flex flex-wrap items-center gap-3 mb-4 text-sm text-[var(--color-text-muted)]">
+            <FormattedDate date={pubDate} />
+            {updatedDate && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span>Updated on </span>
+                <FormattedDate date={updatedDate} />
+              </>
+            )}
+            {tags && tags.length > 0 && (
+              <>
+                <span aria-hidden="true">·</span>
+                <span class="flex flex-wrap gap-1.5">
+                  {tags.map(tag => (
+                    <span class="px-2.5 py-0.5 text-xs font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full">
+                      {tag}
+                    </span>
+                  ))}
+                </span>
+              </>
+            )}
+          </div>
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-text)] text-balance">
+            {title}
+          </h1>
+          <p class="mt-4 text-lg text-[var(--color-text-muted)] leading-relaxed">{description}</p>
+        </header>
+        
+        <div class="prose">
+          <slot />
+        </div>
+        
+        {tags && tags.length > 0 && (
+          <footer class="mt-12 pt-8 border-t border-[var(--color-border)]">
+            <div class="flex flex-wrap items-center gap-3 text-sm text-[var(--color-text-muted)]">
+              <span>Tags:</span>
+              <div class="flex flex-wrap gap-2">
+                {tags.map(tag => (
+                  <a 
+                    href={`/blog/tags/${tag.toLowerCase().replace(/\s+/g, '-')}/`}
+                    class="px-3 py-1 text-sm font-medium bg-[var(--color-bg-secondary)] border border-[var(--color-border)] rounded-full hover:bg-[var(--color-border)] transition-colors"
+                  >
+                    {tag}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </footer>
+        )}
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
